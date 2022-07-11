@@ -23,7 +23,7 @@ class Movies {
   late final String backdropPath;
   late final int totalResults;
   late final bool public;
-  late final String revenue;
+  late final int revenue;
   late final int page;
   late final List<Movie> listMovie;
   late final String iso_639_1;
@@ -44,13 +44,13 @@ class Movies {
     revenue = json['revenue'];
     page = json['page'];
     listMovie =
-        List.from(json['listMovie']).map((e) => Movie.fromJson(e)).toList();
+        List.from(json['results']).map((e) => Movie.fromJson(e)).toList();
     iso_639_1 = json['iso_639_1'];
     totalPages = json['total_pages'];
     description = json['description'];
     createdBy = CreatedBy.fromJson(json['created_by']);
     iso_3166_1 = json['iso_3166_1'];
-    averageRating = json['average_rating'];
+    averageRating = json['average_rating'] + .0;
     runtime = json['runtime'];
     name = json['name'];
   }
@@ -123,10 +123,10 @@ class Movie {
     originalLanguage = json['original_language'];
     title = json['title'];
     backdropPath = json['backdrop_path'];
-    popularity = json['popularity'];
+    popularity = json['popularity'] + .0;
     voteCount = json['vote_count'];
     video = json['video'];
-    voteAverage = json['vote_average'];
+    voteAverage = json['vote_average'] + .0;
   }
 
   Map<String, dynamic> toJson() {
