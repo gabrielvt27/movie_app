@@ -75,6 +75,44 @@ class Movies {
     data['name'] = name;
     return data;
   }
+
+  Movies copyWith({
+    String? posterPath,
+    int? id,
+    String? backdropPath,
+    int? totalResults,
+    bool? public,
+    int? revenue,
+    int? page,
+    List<Movie>? listMovie,
+    String? iso_639_1,
+    int? totalPages,
+    String? description,
+    CreatedBy? createdBy,
+    String? iso_3166_1,
+    double? averageRating,
+    int? runtime,
+    String? name,
+  }) {
+    return Movies(
+      posterPath: posterPath ?? this.posterPath,
+      id: id ?? this.id,
+      backdropPath: backdropPath ?? this.backdropPath,
+      totalResults: totalResults ?? this.totalResults,
+      public: public ?? this.public,
+      revenue: revenue ?? this.revenue,
+      page: page ?? this.page,
+      listMovie: listMovie ?? this.listMovie,
+      iso_639_1: iso_639_1 ?? this.iso_639_1,
+      totalPages: totalPages ?? this.totalPages,
+      description: description ?? this.description,
+      createdBy: createdBy ?? this.createdBy,
+      iso_3166_1: iso_3166_1 ?? this.iso_3166_1,
+      averageRating: averageRating ?? this.averageRating,
+      runtime: runtime ?? this.runtime,
+      name: name ?? this.name,
+    );
+  }
 }
 
 class Movie {

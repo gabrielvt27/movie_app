@@ -42,6 +42,9 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
+              TextField(
+                onChanged: _controller.onChanged,
+              ),
               ValueListenableBuilder<Movies?>(
                 valueListenable: _controller.movies,
                 builder: (context, movies, child) {
